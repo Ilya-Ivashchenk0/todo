@@ -6,6 +6,9 @@
 - Node.js >= 18
 - npm >= 9
 
+### Деплой проекта
+- Открыть: [todo-55yd.vercel.app](https://todo-55yd.vercel.app)
+
 Проверить версии:
 
 ```bash
