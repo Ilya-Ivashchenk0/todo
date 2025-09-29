@@ -22,26 +22,26 @@ export const HomePage = () => {
 
   const toggleTodo = (id: string) => {
     setTodos(
-      todos.map(t => (t.id === id ? { ...t, completed: !t.completed } : t))
+      todos.map(todo => (todo.id === id ? { ...todo, completed: !todo.completed } : todo))
     )
   }
 
   const deleteTodo = (id: string) => {
-    setTodos(todos.filter(t => t.id !== id))
+    setTodos(todos.filter(todo => todo.id !== id))
   }
 
   const editTodo = (id: string, title: string) => {
-    setTodos(todos.map(t => (t.id === id ? { ...t, title } : t)))
+    setTodos(todos.map(todo => (todo.id === id ? { ...todo, title } : todo)))
   }
 
   const activeCount = useMemo(
-    () => todos.filter(t => !t.completed).length,
+    () => todos.filter(todo => !todo.completed).length,
     [todos]
   )
 
   const filtered = useMemo(() => {
-    if (filter === 'active') return todos.filter(t => !t.completed)
-    if (filter === 'completed') return todos.filter(t => t.completed)
+    if (filter === 'active') return todos.filter(todo => !todo.completed)
+    if (filter === 'completed') return todos.filter(todo => todo.completed)
     return todos
   }, [todos, filter])
 
