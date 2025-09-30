@@ -51,7 +51,6 @@ export const TodoItem: FC<TodoItemProps> = ({
           checked={todo.completed}
           onChange={() => onToggle(todo.id)}
           className="h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-blue-500"
-          value={''}
         />
         <div className="flex items-center gap-2">
           {isEditing ? (

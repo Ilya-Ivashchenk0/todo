@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useState, type FormEvent } from 'react'
 import { TodoForm } from '@/features/todo-form'
 import { TodoList } from '@/widgets/todo-list'
 import type { Filter, Todo } from '@/types'
@@ -22,7 +22,9 @@ export const HomePage = () => {
 
   const toggleTodo = (id: string) => {
     setTodos(
-      todos.map(todo => (todo.id === id ? { ...todo, completed: !todo.completed } : todo))
+      todos.map(todo =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo
+      )
     )
   }
 
@@ -45,7 +47,7 @@ export const HomePage = () => {
     return todos
   }, [todos, filter])
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = (e: FormEvent) => {
     e.preventDefault()
     const trimmed = title.trim()
     if (!trimmed) return
